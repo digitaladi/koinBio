@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-<h1>Koinbio</h1>
+<h1>Koinbio APP</h1>
     </div>
   );
 }

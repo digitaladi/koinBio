@@ -8,6 +8,7 @@ import { ThemeContextProvider } from './context/theme'
 //import Cv from './cv';
 import Layout from './component/Layout';
 import MenuContextProvider from './context/MenuContext';
+import Connexion from './pages/Connexion';
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
 
   
 <MenuContextProvider>
+<Connexion></Connexion>
     <Layout />
 </MenuContextProvider>
-  
+
   )
 }
 

@@ -9,6 +9,11 @@ import { ThemeContextProvider } from './context/theme'
 import Layout from './component/Layout';
 import MenuContextProvider from './context/MenuContext';
 import Connexion from './pages/Connexion';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ListesPlantes from './pages/ListesPlantes';
+import Inscription from './pages/Inscription';
+import NoPage from './pages/NoPage';
+import Home from './component/Home';
 
 
 function App() {
@@ -20,8 +25,24 @@ function App() {
 
   
 <MenuContextProvider>
-<Connexion></Connexion>
-    <Layout />
+  <BrowserRouter>
+    <Routes>
+    <Route path='/' element={<Layout /> }>    
+    <Route index  element={<Home />} /> 
+      <Route path='/connexion/' element={<Connexion />} />
+      <Route path='/inscription/' element={<Inscription />} />
+      
+   { /*  <Route path='/plantes/' element={<ListesPlantes />} /> */}
+   <Route path='*' element={<NoPage />}>  </Route>
+   </Route>
+        
+        
+   
+       
+      </Routes>
+ </BrowserRouter> 
+   
+ 
 </MenuContextProvider>
 
   )

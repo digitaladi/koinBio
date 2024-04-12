@@ -4,4 +4,4 @@ import { createContext } from "react"
 
 
 
-export  const UserInformationContext = createContext({username:"aladi", descriptif: "le username et le descriptif ont été crée avec createContext et récupéré dans le footer avec useContext"})
+export  const UserInformationContext = createContext({copyright:"@ 2024 Copyright par KoinBio", descriptif: "A propos"})

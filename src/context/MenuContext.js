@@ -7,12 +7,12 @@ import LoginIcon from '@mui/icons-material/Login';
 
 
 
+/* {lien:"/plantes/", titre:"Créer la carte d'identité de la plante",icon:<GrassOutlinedIcon /> } , */
+
+const listesMenus = [ {lien:"/inscription/", titre:"S'inscrire",icon:<HowToRegOutlinedIcon /> }, {lien:"/connexion/", titre:"Se connecter",icon:<LoginIcon /> }]
 
 
-const listesMenus = [ {lien:"https://fr.legacy.reactjs.org/", titre:"S'inscrire",icon:<HowToRegOutlinedIcon /> },  {lien:"https://symfony.com/", titre:"Créer la carte d'identité de la plante",icon:<GrassOutlinedIcon /> } ,{lien:"https://openclassrooms.com/fr/", titre:"Se connecter",icon:<LoginIcon /> }]
-
-
-//1_ ici on crée et  exporte notre context qui contient une tableau d'objets
+//1_ ici on crée et  exporte notre context qui contient une tableau d'objetss   
 //2_pour que notre contexte soit disponible partout dans  des composants enfants il suffit d'abords : 
 export const MenuContext = createContext(listesMenus)
 

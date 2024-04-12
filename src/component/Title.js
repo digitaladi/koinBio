@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -8,7 +9,7 @@ const Title = () => {
 
     return (
         <div className="title">
-        <h1>KoinBio</h1>
+      <Link    style={{textDecoration:"none", color:"#12372A"}} to={"/"} alt="logo du site">   <h1> KoinBio </h1></Link>
         </div>
     )
     

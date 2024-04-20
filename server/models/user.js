@@ -1,4 +1,4 @@
-
+const bcrypt = require("bcrypt")
 
 //const { Sequelize, DataTypes } = require("sequelize");
 //Model user (création de la table User)
@@ -25,10 +25,49 @@ module.exports = (Sequelize, DataTypes) => {
         },
 
         password: {
-            type: DataTypes.String,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
+          
         }
 
-    })
+    },
+
+    {
+        //permet de hasher un mot de passe avant de s'incrire
+        hooks: {
+         beforeCreate: async (user) => {
+          if (user.password) {
+           const salt = await bcrypt.genSaltSync(10, 'a');
+           user.password = bcrypt.hashSync(user.password, salt);
+          }
+         },
+         //permet de hasher un mot de passe avant de modifier son compte
+         beforeUpdate:async (user) => {
+          if (user.password) {
+           const salt = await bcrypt.genSaltSync(10, 'a');
+           user.password = bcrypt.hashSync(user.password, salt);
+          }
+         }
+        }
+   /*     ,
+        instanceMethods: {
+         validPassword: (password) => {
+          return bcrypt.compareSync(password, this.password);
+         }
+        }*/
+       }
+
+    
+)
+
+
+
+
+
+
+
+
+
+
 
 }
